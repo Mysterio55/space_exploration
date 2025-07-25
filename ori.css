@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif; /* Set a default font */
+    color: #f0f0f0; /* Light text color */
+}
+
+.starry-night {
+    background-image: url("bg.jpg"); /* Keep the background image */
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: background-move 30s linear infinite; /* Add moving background effect */
+}
+
+@keyframes background-move {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.grid {
+    position: relative;
+    width: 60vw; 
+    height: 60vw; 
+    max-width: 500px; 
+    max-height: 500px;
+}
+
+.star {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    max-width: 15px; 
+    max-height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;  /* Start as invisible */
+    box-shadow: 0 0 20px white; /* Glowing effect */
+}
+
+/* Positioning stars */
+#betelgeuse { top: 10%; left: 24%; }
+#bellatrix { top: 20%; left: 70%; }
+#alnilam { top: 45%; left: 47%; }
+#mintaka { top: 40%; left: 32%; }
+#alnitak { top: 52%; left: 62%; }
+#saiph { top: 80%; left: 40%; }
+#rigel { top: 74%; left: 80%; }
+
+.label {
+    position: absolute;
+    color: white;
+    font-size: 0.7vw; 
+    max-font-size: 14px; 
+    font-family: Arial, sans-serif;
+}
+
+#betelgeuse-label { top: 8%; left: 28%; }
+#bellatrix-label { top: 18%; left: 74%; }
+#alnilam-label { top: 47%; left: 50%; }
+#mintaka-label { top: 38%; left: 36%; }
+#alnitak-label { top: 54%; left: 66%; }
+#saiph-label { top: 82%; left: 44%; }
+#rigel-label { top: 76%; left: 84%; }
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.6vw;
+    pointer-events: none; /* Prevent mouse interactions */
+    display: none; /* Initially hidden */
+}
+
+/* Astronomy Section Styles */
+.astronomy-section {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px; /* Fixed width for the section */
+    transform: scale(0);
+    animation: slide-in 0.8s forwards; /* Animation for entry */
+}
+
+.astronomy-section h2 {
+    font-size: 1.2rem;
+    color: #ffd700; /* Gold color for headings */
+}
+.information-section {
+    position: absolute;
+    top: 69%;
+    left: 20%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px; /* Fixed width for the section */
+    transform: scale(0);
+    animation: slide-in 0.8s forwards; /* Animation for entry */
+    animation-delay: 0.5s; 
+}
+
+.information-section h2 {
+    font-size: 1.2rem;
+    color: #ffd700; /* Gold color for headings */
+}
+
+/* Education Area Styles */
+.education-area {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px; /* Fixed width for the section */
+    transform: scale(0);
+    animation: slide-in 0.8s forwards; /* Animation for entry */
+    animation-delay: 1s5; /* Delay for the second section */
+}
+
+.education-area h2 {
+    font-size: 1.2rem;
+    color: #ffd700; /* Gold color for headings */
+}
+
+.education-area ul {
+    list-style-type: none; /* Remove bullet points */
+}
+
+.education-area a {
+    color: #ffffff; /* White text for links */
+    text-decoration: underline; /* Underlined links */
+}
+
+.education-area a:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.6vw;
+    pointer-events: none; /* Prevent mouse interactions */
+    display: none; /* Initially hidden */
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+/* Animation for section entry */
+@keyframes slide-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}

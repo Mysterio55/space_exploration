@@ -1,0 +1,173 @@
+/* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif; /* Default font */
+    color: #f0f0f0; /* Light text color */
+}
+
+.starry-night {
+    background-image: url("bg.jpg"); /* Background image */
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: background-move 30s linear infinite; /* Moving background effect */
+}
+
+@keyframes background-move {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.grid {
+    position: relative;
+    width: 60vw;
+    height: 60vw;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.star {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    max-width: 15px;
+    max-height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;  /* Start invisible */
+    box-shadow: 0 0 20px white; /* Glow effect */
+}
+
+/* Positioning stars in Cancer constellation */
+#acubens { top: 10%; left: 30%; }
+#altarf { top: 60%; left: 40%; }
+#m44 { top: 40%; left: 60%; }
+#m67 { top: 20%; left: 80%; }
+
+/* Positioning labels next to their stars */
+.label {
+    position: absolute;
+    color: white;
+    font-size: 0.7vw;
+    
+    font-family: Arial, sans-serif;
+}
+
+#acubens-label { top: 8%; left: 33%; }
+#altarf-label { top: 62%; left: 43%; }
+#m44-label { top: 42%; left: 63%; }
+#m67-label { top: 18%; left: 83%; }
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.6vw;
+    pointer-events: none; /* Prevent mouse interactions */
+    display: none; /* Hidden initially */
+}
+
+/* Astronomy Section Styles */
+.astronomy-section {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px; /* Fixed width */
+    color: hsl(40, 8%, 93%); /* Light color */
+    font-size: 0.9rem; /* Font size */
+    line-height: 1.4; /* Readable line height */
+    transform: scale(0);
+    animation: slide-in 0.8s forwards; /* Slide-in animation */
+}
+
+.astronomy-section h2 {
+    font-size: 1.2rem;
+    color: #ffd700; /* Gold for headings */
+}
+
+/* Information Section */
+.information-section {
+    position: absolute;
+    top: 69%;
+    left: 20%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    transform: scale(0);
+    animation: slide-in 0.8s forwards;
+    animation-delay: 0.5s;
+    color: hsl(48, 26%, 96%); /* Gold color for headings */
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.information-section h2 {
+    font-size: 1.2rem;
+    color: #ffd700;
+}
+
+/* Education Area Styles */
+.education-area {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    transform: scale(0);
+    animation: slide-in 0.8s forwards;
+    animation-delay: 1s;
+    color: #ffd700;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.education-area h2 {
+    font-size: 1.2rem;
+}
+
+.education-area ul {
+    list-style-type: none; /* No bullet points */
+    padding: 0;
+}
+
+.education-area a {
+    color: #ffffff; /* White links */
+    text-decoration: underline;
+}
+
+.education-area a:hover {
+    color: #ffd700; /* Gold on hover */
+}
+
+/* Animation for section entry */
+@keyframes slide-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}

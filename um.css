@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif; /* Set a default font */
+    color: #f0f0f0; /* Light text color */
+}
+
+.starry-night {
+    background-image: url("bg.jpg"); /* Keep the background image */
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: background-move 30s linear infinite; /* Add moving background effect */
+}
+
+@keyframes background-move {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.grid {
+    position: relative;
+    width: 60vw; 
+    height: 60vw; 
+    max-width: 500px; 
+    max-height: 500px;
+}
+
+.star {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    max-width: 15px; 
+    max-height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;  /* Start as invisible */
+    box-shadow: 0 0 20px white; /* Glowing effect */
+}
+
+/* Positioning stars in Ursa Major constellation */
+#alioth { top: 20%; left: 45%; }
+#mizar { top: 30%; left: 35%; }
+#dube { top: 10%; left: 25%; }
+#phekda { top: 50%; left: 30%; }
+#merak { top: 40%; left: 60%; }
+#phad { top: 20%; left: 70%; }
+#megrez { top: 40%; left: 50%; }
+
+/* Positioning labels next to their stars */
+.label {
+    position: absolute;
+    color: white;
+    font-size: 0.7vw; 
+    max-font-size: 14px; 
+    font-family: Arial, sans-serif;
+}
+
+/* Label positioning */
+#alioth-label { top: 18%; left: 48%; }
+#mizar-label { top: 28%; left: 38%; }
+#dube-label { top: 8%; left: 28%; }
+#phekda-label { top: 52%; left: 33%; }
+#merak-label { top: 42%; left: 63%; }
+#phad-label { top: 22%; left: 73%; }
+#megrez-label { top: 42%; left: 53%; }
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.6vw;
+    pointer-events: none; /* Prevent mouse interactions */
+    display: none; /* Initially hidden */
+}
+
+/* Astronomy Section Styles */
+.astronomy-section {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px; /* Fixed width for the section */
+    color: #f9f9f5; /* Gold color for headings */
+    font-size: 0.9rem; /* Font size */
+    line-height: 1.4; /* Line height for readability */
+    transform: scale(0);
+    animation: slide-in 0.8s forwards; /* Animation for entry */
+}
+
+.astronomy-section h2 {
+    font-size: 1.2rem; /* Heading size */
+    color: #ffd700; 
+}
+
+/* Information Section */
+.information-section {
+    position: absolute;
+    top: 69%;
+    left: 20%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px; /* Fixed width for the section */
+    transform: scale(0);
+    animation: slide-in 0.8s forwards; /* Animation for entry */
+    animation-delay: 0.5s; 
+    color: hsl(50, 20%, 94%); /* Gold color for headings */
+    font-size: 0.9rem; /* Font size */
+    line-height: 1.4; /* Line height for readability */
+}
+
+.information-section h2 {
+    font-size: 1.2rem; /* Heading size */
+    color: #ffd700; 
+}
+
+/* Education Area Styles */
+.education-area {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px; /* Fixed width for the section */
+    transform: scale(0);
+    animation: slide-in 0.8s forwards; /* Animation for entry */
+    animation-delay: 1s; /* Delay for the second section */
+    color: #ffd700; /* Gold color for headings */
+    font-size: 0.9rem; /* Font size */
+    line-height: 1.4; /* Line height for readability */
+}
+
+.education-area h2 {
+    font-size: 1.2rem; /* Heading size */
+}
+
+.education-area ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.education-area a {
+    color: #ffffff; /* White text for links */
+    text-decoration: underline; /* Underlined links */
+}
+
+.education-area a:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+
+/* Animation for section entry */
+@keyframes slide-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}

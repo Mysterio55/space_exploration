@@ -1,0 +1,1337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-color: black; /* Initial background */
+    color: white;
+}
+
+#big-bang {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    z-index: 9999;
+}
+
+.explosion {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-image: url("bg.jpg");
+    box-shadow: 0 0 50px rgb(189, 146, 5);
+    animation: bigbang 15s forwards;
+}
+
+@keyframes bigbang {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 300vw;
+        height: 300vw;
+        opacity: 0;
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    
+    background-image: url("fmb.png");
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    z-index: 100;
+    height: 11.2%;
+}
+
+.navbar a, .navbar input {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+}
+
+.navbar input {
+    background-color: #333;
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 130px;
+    font-size: 0.7rem;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.7rem;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#img{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+   
+}
+#mg{
+    background-image: url("mpg.jpg");
+    background-size: cover;
+    
+    height: 90%;
+    width: 100%;
+}
+#ftext{
+    position: absolute;
+    top: 43%;
+    left: 2.2%;
+    font-size: 3rem;
+    color: #a5a5a6;
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+}
+#ltext{
+    position: absolute;
+    top: 53%;
+    left: 3.5%;
+    font-size: 1.1rem;
+    color: #a5a5a6;
+    font-weight: 130;
+}
+.container {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.side-box {
+    width: 40%;
+    height:30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #222;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    opacity: 0; /* Initially hidden */
+}
+
+/* Position for GSAP animation start */
+.left-box {
+    transform: translateX(-100%);
+    position: absolute;
+    top: 10%;
+}
+
+.right-box {
+    transform: translateX(100%);
+    position: absolute;
+    top: 60%;
+    right: 10%;
+    
+}
+#main-body{
+    width: 100vw;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0e0e0, #f5f5f5); 
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.box-box {
+    display: flex;
+    gap: 2%;
+    width: 90%;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Box Styles */
+.box {
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    line-height: 1.5;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    background-color: #000; /* Fallback color */
+    isolation: isolate;
+}
+
+/* Title */
+.box h2 {
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+    color: #FFD700;
+}
+
+/* Box Text */
+.box p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #d3d3d3;
+    z-index: 2;
+    position: relative;
+}
+
+/* Star Animation */
+@keyframes twinklingStars {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+.star-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    opacity: 0.8;
+    animation: twinklingStars 3s infinite;
+    z-index: 1;
+}
+
+/* Gradient Overlay */
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 51, 102, 0.6) 100%);
+    z-index: 2;
+}
+
+/* Unique Backgrounds for Each Box */
+.box-why {
+    background-color: #0d1b2a;
+    background: linear-gradient(120deg, #0d1b2a, #1d3557); /* Dark navy blue to slightly lighter blue */
+}
+
+.box-how {
+    background-color: #1c2541;
+    background: linear-gradient(120deg, #1c2541, #3a506b); /* Very dark indigo to deep sky blue */
+}
+
+.box-when {
+    background-color: #283149;
+    background: linear-gradient(120deg, #283149, #404b69); /* Midnight blue to slate blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .box {
+        width: 100%;
+    }
+}
+
+#vid{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    
+}
+
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+   to { opacity: 1; }
+.popup {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(50, 50, 50, 0.9), rgba(30, 30, 30, 0.9));
+
+    color: white;
+    padding: 10px 15px;
+    border-radius:16px;
+    box-shadow: 0 0 29px rgba(215, 102, 4, 0.5);
+    transition: opacity 0.4s ease;
+    opacity: 0;
+    animation: fadeIn 0.4s forwards; /* Animation for popup */
+    width: 15%;
+}
+.popup-piece {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(50, 50, 50, 0.9), rgba(30, 30, 30, 0.9));
+    box-shadow: 0 0 6px rgba(215, 102, 4, 0.5);
+    border-radius:2px;
+    border-radius: 30%; /* Makes it look more like a piece */
+    pointer-events: none; /* Prevent mouse interactions */
+}
+
+#brk{
+    width: 100vw; /* Width of all sections combined */
+    height: 65vh;
+    background: linear-gradient(135deg, #e0e0e0, #f5f5f5); 
+}
+.brk-mg {
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e0e0e0, #f5f5f5); /* Light grey gradient */
+}
+
+.center-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75vw;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.center-div img:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.section-brk {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.section-brk img {
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.brk-1 {
+    height: 33vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0e0e0, #f5f5f5); 
+    font-family: Arial, sans-serif;
+    color: #ebf70e;
+}
+
+.space-info {
+    width: 50vw;
+    padding: 8px;
+    background-color: #0d1b2a;
+    background: linear-gradient(120deg, #0d1b2a, #1d3557); /* Dark navy blue to slightly lighter blue */
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    line-height: 1.6;
+    height: 80%;
+}
+
+.space-info h2 {
+    font-size: 1.5rem;
+    color: #bce30d;
+    margin-bottom: 10px;
+}
+
+.space-info p {
+    font-size: 1rem;
+    color:white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hidden {
+    display: none;
+}
+.horizontal-scroll-wrapper {
+    display: flex;
+    width: 300vw; /* Width of all sections combined */
+    height: 100vh;
+}
+
+.horizontal-section {
+    width: 100vw;
+    height: 100vh;
+
+    font-size: 0.8rem;
+   
+}
+
+/* Background colors for horizontal sections */
+.section-1 { background-color: #0b0b0b; }
+.nasa-background-animation {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    height: 100vh;
+    background-image: url("mmyy.png");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.containers {
+    padding: 20px;
+    color: #fff;
+    max-width: 700px;
+    margin: auto;
+    margin-left: 50px; /* Shift content to the left */
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #FF4500;
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #E5E5E5;
+}
+
+.intro {
+    margin-top: 20px;
+    color: #A8DADC;
+    text-align: left;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.missions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.mission {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    gap: 15px;
+}
+
+.mission img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.mission h3 {
+    color: #FFD700;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #FF4500;
+}
+#apl{
+    background-image: url("app-removebg-preview.png");
+    background-size: cover;
+    height: 300px;
+    width: 14%;
+    position: absolute;
+    top: 13.4%;
+    right: 20%;
+}
+#nasa-moon{
+    
+    position: absolute;
+    top:46.9%;
+    right: 18.6%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(34, 34, 34, 1) 100%);
+    background-image: url("45770615418.png");
+    background-size: cover;
+}
+
+
+/* Animated stars background */
+@keyframes starAnimation {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-100vh); }
+}
+
+
+.section-2 {
+    background-color: #50e3c2;
+}
+.roscosmos-background-animation {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(220, 220, 220, 1) 100%);
+    overflow: hidden;
+}
+
+.roscosmos-container {
+    padding: 20px;
+    color: #333;
+    max-width: 700px;
+    margin: auto;
+    margin-left: 50px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #CC0000;  /* Russian red color theme */
+    text-shadow: 0 0 10px rgba(204, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+#colm {
+    font-size: 1.2rem;
+    color: #CC0000;
+}
+
+.roscosmos-intro {
+    margin-top: 20px;
+    color: #444;
+    text-align: left;
+}
+
+.roscosmos-intro h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.roscosmos-missions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.roscosmos-mission {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+}
+
+.roscosmos-mission h3 {
+    color: #CC0000;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #CC0000;
+}
+.mgi{
+    height: 30%;
+    width: 15%;
+    background-image: url("rsc-removebg-preview.png");
+    background-size: cover;
+    position: relative;
+    bottom: 82%;
+    left: 62%;
+    border-radius: 50%;
+}
+.mgii{
+    height: 30%;
+    width: 15%;
+    background-image: url("rsc2-removebg-preview.png");
+    background-size: cover;
+    
+    position: relative;
+    bottom: 87%;
+    left: 74%;
+    border-radius: 50%;
+}
+.mgiii{
+    height: 30%;
+    width: 15%;
+    background-image: url("rsc3-removebg-preview.png");
+    background-size: cover;
+    position: relative;
+    bottom: 88%;
+    left: 62%;
+    border-radius: 50%;
+}
+.section-3 { background-color: #50e3c2; }
+
+.isro-background-animation {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(34, 34, 34, 1) 100%);
+    overflow: hidden;
+    background-image: url("mmyy.png");
+    background-size: cover;
+}
+
+.isro-container {
+    padding: 20px;
+    color: #fff;
+    max-width: 700px;
+    margin: auto;
+    margin-left: 50px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #FF4500;
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #E5E5E5;
+}
+
+.isro-intro {
+    margin-top: 20px;
+    color: #A8DADC;
+    text-align: left;
+}
+
+.isro-intro h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.isro-missions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.isro-mission {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    gap: 15px;
+}
+
+.isro-mission h3 {
+    color: #FFD700;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #FF4500;
+}
+@import url(https://fonts.bunny.net/css?family=roboto:300);
+#bah{
+    height: 500px;
+    width: 500px;
+    position: relative;
+    bottom:72%;
+    left: 60%;
+}
+.isro-img {
+    background-color: var(--clr-bg);
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*font-size: clamp(0.9rem, 2.5vw,1.4rem);*/
+    color: var(--clr-primary);
+    padding: 1rem;
+    background-image: radial-gradient(circle, rgba(175, 208, 84, .25) 1px, rgba(0, 0, 0, 0) 1px);
+    background-size: 40px 40px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    left:50%;
+
+    bottom: 31%;
+  }
+  
+  .isro-img::after {
+    content: "";
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    background-image: url('data:image/svg+xml,<svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" version="1.1"><g id="surface1"><path fill="rgb(175, 208, 84)" d="M 47.894531 0.789062 C 46.320312 0.878906 45.480469 0.949219 44.601562 1.042969 C 37.023438 1.863281 29.746094 4.394531 23.386719 8.414062 C 20.214844 10.421875 17.402344 12.65625 14.757812 15.285156 C 7.773438 22.222656 3.027344 30.992188 1.113281 40.5 C -0.460938 48.332031 -0.132812 56.378906 2.070312 64.003906 C 4.0625 70.890625 7.507812 77.195312 12.277344 82.675781 C 16.65625 87.714844 22.109375 91.898438 28.074219 94.804688 C 37.914062 99.59375 49.078125 101.03125 59.875 98.886719 C 69.480469 96.976562 78.265625 92.300781 85.253906 85.371094 C 92.304688 78.386719 97.027344 69.65625 98.960938 60.039062 C 99.636719 56.675781 99.902344 53.996094 99.902344 50.285156 C 99.902344 47.910156 99.855469 46.925781 99.660156 45.128906 C 98.671875 35.808594 95.136719 27.136719 89.324219 19.773438 C 86.917969 16.722656 83.851562 13.675781 80.777344 11.285156 C 75.664062 7.304688 69.949219 4.410156 63.695312 2.628906 C 60.5625 1.742188 57.058594 1.128906 53.609375 0.867188 C 52.796875 0.804688 48.566406 0.746094 47.894531 0.789062 Z M 54.105469 24.300781 C 54.105469 24.355469 53.550781 25.921875 52.875 27.773438 L 51.636719 31.148438 L 41.390625 31.148438 C 34.375 31.148438 31 31.167969 30.683594 31.210938 C 27.867188 31.601562 25.414062 33.695312 24.371094 36.621094 C 24.054688 37.503906 23.910156 38.265625 23.839844 39.371094 C 23.800781 40.046875 23.789062 43.769531 23.804688 50.574219 C 23.828125 61.464844 23.816406 60.867188 24.101562 62.066406 C 24.316406 62.976562 24.832031 64.132812 25.339844 64.875 C 26.515625 66.597656 28.074219 67.726562 29.9375 68.203125 C 30.679688 68.394531 31.542969 68.433594 34.851562 68.433594 C 37.878906 68.433594 37.960938 68.441406 37.925781 68.542969 C 37.90625 68.601562 37.34375 70.148438 36.671875 71.972656 L 35.460938 75.296875 L 32.726562 75.296875 C 30.136719 75.296875 29.960938 75.285156 29.269531 75.164062 C 26.808594 74.714844 24.59375 73.707031 22.644531 72.152344 C 22.015625 71.648438 20.859375 70.496094 20.335938 69.847656 C 18.960938 68.15625 17.824219 65.824219 17.285156 63.601562 C 16.824219 61.660156 16.835938 62.175781 16.859375 49.355469 C 16.882812 36.71875 16.847656 37.765625 17.292969 35.953125 C 17.882812 33.523438 18.941406 31.398438 20.515625 29.5 C 21.140625 28.746094 21.625 28.257812 22.417969 27.597656 C 24.695312 25.699219 27.460938 24.53125 30.316406 24.265625 C 30.589844 24.234375 36.054688 24.210938 42.460938 24.207031 C 53.515625 24.199219 54.105469 24.207031 54.105469 24.300781 Z M 66.320312 24.363281 C 69.789062 24.90625 72.703125 26.371094 75.039062 28.757812 C 76.65625 30.402344 77.730469 32.21875 78.382812 34.417969 C 78.683594 35.445312 78.824219 36.347656 78.867188 37.523438 C 78.964844 40.515625 78.066406 43.320312 76.21875 45.777344 C 75.949219 46.136719 75.707031 46.445312 75.675781 46.460938 C 75.558594 46.539062 75.636719 46.605469 76.246094 47 C 80.933594 50.003906 83.621094 55.320312 83.308594 60.960938 C 83.027344 65.992188 80.328125 70.570312 76.113281 73.175781 C 74.453125 74.199219 72.570312 74.894531 70.546875 75.21875 L 69.757812 75.347656 L 56.425781 75.363281 L 43.085938 75.386719 L 43.273438 74.878906 C 43.371094 74.601562 43.949219 73.027344 44.546875 71.386719 L 45.640625 68.40625 L 57.613281 68.375 L 69.582031 68.347656 L 70.167969 68.191406 C 72.121094 67.652344 73.628906 66.617188 74.753906 65.019531 C 75.40625 64.097656 75.960938 62.777344 76.175781 61.632812 C 76.328125 60.832031 76.328125 59.308594 76.175781 58.503906 C 75.867188 56.859375 75.085938 55.316406 73.960938 54.152344 C 72.835938 52.976562 71.722656 52.308594 70.191406 51.894531 L 69.582031 51.730469 L 52.117188 51.703125 L 34.65625 51.671875 L 35.691406 48.835938 C 36.265625 47.273438 36.835938 45.703125 36.96875 45.351562 L 37.207031 44.695312 L 51.269531 44.679688 L 65.328125 44.667969 L 65.941406 44.511719 C 68.972656 43.753906 71.089844 41.820312 71.71875 39.214844 C 71.890625 38.496094 71.898438 37.390625 71.722656 36.699219 C 71.019531 33.839844 68.550781 31.78125 65.21875 31.253906 C 64.984375 31.21875 63.597656 31.171875 62.058594 31.15625 L 59.3125 31.121094 L 60.523438 27.789062 C 61.195312 25.960938 61.769531 24.398438 61.800781 24.324219 L 61.863281 24.183594 L 63.710938 24.21875 C 65.164062 24.242188 65.722656 24.269531 66.320312 24.363281 Z M 66.320312 24.363281 "/></g></svg>');
+  }
+  
+.wheel {
+  --inner-offset: clamp(2rem, 3vw, 3rem); /* Offset for after pseudo-element */
+  --title-offset: -40px;
+  
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: min(calc(100% - 2rem), 500px);
+  aspect-ratio: 1;
+}
+
+
+
+/* Clip-path definitions using :nth-child()  - would have been simpler to do in JS but I wanted to have it with just CSS */
+.wheel > li:nth-child(1){
+  --title-rotate: -2deg;
+  --clip-1: polygon( 50% 50%, 50% 0%, 100% 0%, 100% 0%,  100% 0%,   100% 0%,   100% 0%,   100% 0%,   100% 0%,   100% 0%);
+  --clip-2: polygon( 50% 50%, 50% 0%, 100% 0%, 100% 50%, 100% 50%,  100% 50%,  100% 50%,  100% 50%,  100% 50% , 100% 50%);
+  --clip-3: polygon( 50% 50%, 50% 0%, 100% 0%, 100% 100%,100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+  --clip-4: polygon( 50% 50%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%,  50% 100%,  50% 100%,  50% 100%,  50% 100%);
+  --clip-5: polygon( 50% 50%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%,  0% 100%,   0% 100%,   0% 100%,   0% 100%);
+  --clip-6: polygon( 50% 50%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%,  0% 100%,   0% 50%,    0% 50%,    0% 50%);
+  --clip-7: polygon( 50% 50%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%,  0% 100%,   0% 50%,    0% 0%,     0% 0%);
+  --clip-8: polygon( 50% 50%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%,  0% 100%,   0% 50%,    0% 0%,     50% 0%);
+}
+.wheel > li:nth-child(2){
+  --title-rotate: 43deg;
+  --clip-1: polygon( 50% 50%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
+  --clip-2: polygon( 50% 50%, 100% 0%, 100% 50%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%);
+  --clip-3: polygon( 50% 50%, 100% 0%, 100% 50%,100% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%  );
+  --clip-4: polygon( 50% 50%, 100% 0%, 100% 50%,100% 100%, 50% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100% );
+  --clip-5: polygon( 50% 50%, 100% 0%, 100% 50%,100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+  --clip-6: polygon( 50% 50%, 100% 0%, 100% 50%,100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 0% 0%, 0% 0%);
+  --clip-7: polygon( 50% 50%, 100% 0%, 100% 50%,100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 50% 0%);
+  --clip-8: polygon( 50% 50%, 100% 0%, 100% 50%,100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%);
+}
+.wheel > li:nth-child(3) {
+  --title-rotate: 88deg;
+  --clip-1: polygon(50% 50%, 100% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+  --clip-2: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%);
+  --clip-3: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%);
+  --clip-4: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+  --clip-5: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  --clip-6: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%);
+  --clip-7: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 0%);
+  --clip-8: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%);
+}
+.wheel > li:nth-child(4) {
+  --title-rotate: 132deg;
+  --clip-1: polygon(50% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%);
+  --clip-2: polygon(50% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%);
+  --clip-3: polygon(50% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+  --clip-4: polygon(50% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  --clip-5: polygon(50% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  --clip-6: polygon(50% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 0%, 100% 0%);
+  --clip-7: polygon(50% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%);
+  --clip-8: polygon(50% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%);
+}
+.wheel > li:nth-child(5) {
+  --title-rotate: 177deg;
+  --clip-1: polygon(50% 50%, 50% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%);
+  --clip-2: polygon(50% 50%, 50% 100%, 0% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+  --clip-3: polygon(50% 50%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  --clip-4: polygon(50% 50%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  --clip-5: polygon(50% 50%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+  --clip-6: polygon(50% 50%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%);
+  --clip-7: polygon(50% 50%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%,100% 100%,100% 100%);
+  --clip-8: polygon(50% 50%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%,100% 100%,50% 100% );
+}
+.wheel > li:nth-child(6) {
+  --title-rotate: 222deg;
+  --clip-1: polygon(50% 50%, 0% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+  --clip-2: polygon(50% 50%, 0% 100%, 0% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  --clip-3: polygon(50% 50%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  --clip-4: polygon(50% 50%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+  --clip-5: polygon(50% 50%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
+  --clip-6: polygon(50% 50%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 100% 100%, 100% 100%);
+  --clip-7: polygon(50% 50%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%);
+  --clip-8: polygon(50% 50%, 0% 100%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%);
+}
+.wheel > li:nth-child(7) {
+  --title-rotate: 265deg;
+  --clip-1: polygon(50% 50%, 0% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  --clip-2: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  --clip-3: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+  --clip-4: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
+  --clip-5: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+  --clip-6: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%);
+  --clip-7: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 100%);
+  --clip-8: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
+}
+
+.wheel > li:nth-child(8) {
+  --title-rotate: 311deg;
+  --clip-1: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%,  50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  --clip-2: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+  --clip-3: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50% );
+  --clip-4: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%   );
+  --clip-5: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%  ); 
+  --clip-6: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 100%, 0% 100%   );
+  --clip-7: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 50%  );
+  --clip-8: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%  );
+} 
+
+.wheel > li {
+
+  --title-rotate-hover: calc(var(--title-rotate) - 25deg);
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  /*transition: z-index 300s 500ms; /* this doesn't work */
+}
+
+.wheel > li .hoverable,
+.wheel > li::after {
+  content: '';
+  position: absolute;
+  inset: var(--inset, 0);
+  border-radius: inherit;
+  background-image: var(--img);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: var(--clip-1);
+  transition: opacity,filter,clip-path;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: ease-in-out;
+  filter: var(--hover-filter);
+}
+
+.wheel > li::after {
+  --inset: var(--inner-offset);
+  background-size: calc(100% + var(--inset) * 2);
+  animation: var(--animation-after);
+}
+
+.wheel > li .hoverable {
+  cursor: pointer; 
+  z-index: 5;
+}
+/*
+.wheel > li .hoverable::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: transparent;
+  background-image: radial-gradient(transparent, #000 90%);
+}
+*/
+.wheel:has(:hover){
+  --hover-filter: sepia(1);
+}
+
+
+
+/* nav SVG circular text*/
+.wheel > li > svg {
+    position: relative;
+    inset: var(--title-offset);
+    font-size: .25em;
+    z-index: 20;
+    transform-origin: center;
+    text-transform: uppercase;
+    transition: inset 300ms ease-in-out var(--title-trans-delay);
+    color: white;
+    pointer-events: none;
+}
+/* rotating the group (g) can sometimes work better than rotating the whole SVG */
+.wheel > li svg g {
+    transition: all 300ms ease-in-out var(--title-trans-delay);
+    transform-origin: center;
+    transform: rotate(var(--title-rotate-hover,0));
+    opacity: var(--title-opacity,0);
+ }
+
+
+/* HOVER - we hover on the "outer" clippped section*/
+.wheel > li:has(.hoverable:hover) {
+  z-index: 10;
+  transition: z-index 0s;
+  --hover-filter: sepia(0);
+  --title-opacity: 0;
+  --title-trans-delay: calc(var(--trans-duration) - 150ms);
+  /*--title-offset: -40px;*/
+  --title-rotate-hover: var(--title-rotate);
+  --animation-after: reveal var(--trans-duration) ease forwards;
+}
+/*
+.wheel > li::after {
+   --animation-after: hide var(--speed-hide) ease forwards;
+  filter: blur(10px);
+}
+*/
+
+@keyframes reveal {
+  0%  { clip-path: var(--clip-1); }
+  14% { clip-path: var(--clip-2); }
+  28% { clip-path: var(--clip-3); }
+  42% { clip-path: var(--clip-4); }
+  56% { clip-path: var(--clip-5); }
+  70% { clip-path: var(--clip-6); }
+  84% { clip-path: var(--clip-7); }
+  100%{ clip-path: var(--clip-8); }
+}
+
+@keyframes hide {
+  0%  { clip-path: var(--clip-8); }
+  14% { clip-path: var(--clip-7); }
+  28% { clip-path: var(--clip-6); }
+  42% { clip-path: var(--clip-5); }
+  56% { clip-path: var(--clip-4); }
+  70% { clip-path: var(--clip-3); }
+  84% { clip-path: var(--clip-2); }
+  100%{ clip-path: var(--clip-1); }
+}
+
+
+
+/* general styling not relevant for this demo */
+:root {
+  --trans-duration: 500ms;
+  --speed-hide: 2050ms;
+}
+
+/* general styling */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --clr-bg: #222;
+  --clr-primary: #f5f5f5;
+  --clr-secondary: #075985; 
+}
+
+/*
+.wheel:has(:hover) li:not(:hover)::after{
+  animation: hide var(--speed-hide) ease forwards;
+  filter: blur(4px);
+  transition: z-index 300s 500ms; 
+}
+*/
+  /*
+.wheel > li:has(.hoverable:hover)::after {
+animation: reveal var(--trans-duration) ease forwards;
+ 
+}
+*/
+
+.divv{
+    height: 100vh;
+    width: 100vw;
+    background-color: yellow;
+}
+:root {
+    --carousel-transition-duration: 250ms;
+    --carousel-transition-ease: ease-out;
+    --carousel-bg-color-rgb: 0, 0, 0;
+    --carousel-shadow-color-rgb: 128, 128, 128;
+    --carousel-item-width: 10.5rem;
+    --carousel-item-height: 11.5rem;
+    --carousel-item-hover-effect: 1.075;
+    --carousel-item-reflection-blur: 0.25rem;
+    --carousel-item-empty-color-rgb: 255, 255, 255;
+    --carousel-item-glow-color-rgb: 255, 255, 255;
+    --carousel-item-glow-size: 5rem;
+    --carousel-diameter: 50rem;
+    --carousel-3d-perspective: 1000px;
+    --carousel-3d-perspective-origin: 50% 20%;
+    --carousel-control-button-width: 1.25rem;
+    --carousel-control-button-height: 4rem;
+    --carousel-control-color-rgb: 255, 255, 255;
+    --carousel-animation-duration: 25s;
+    --carousel-animation-play-state: running;
+    --carousel-direction-animation-play-state: paused;
+}
+
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+.img-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+     background-color: #0d1b2a;
+    background-image: url("fbg.jpg");
+    background-size: cover;
+
+    overflow: hidden;
+}
+
+.cont-text{
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    left: -5%;
+    font-weight: 900;
+    top:-2%;
+    font-size: 5rem;
+    color: white;
+    height: 250px;
+    text-shadow: 
+        0 2 5px #ffffff, /* White glow */
+
+}
+@keyframes pulse {
+    from {
+        text-shadow: 
+            0 0 5px #ffffff, 
+            0 0 10px #ff00ff, 
+            0 0 15px #ff00ff, 
+            0 0 20px #ff00ff; 
+    }
+    to {
+        text-shadow: 
+            0 0 10px #ffffff, 
+            0 0 20px #ffffff, 
+            0 0 30px #ff00ff, 
+            0 0 40px #ff00ff; 
+    }
+}
+.carousel {
+    --_diameter: var(--carousel-diameter);
+    --_radius: calc(var(--_diameter) / 2);
+    --_item-width: var(--carousel-item-width);
+    --_item-height: var(--carousel-item-height);
+    perspective: var(--carousel-3d-perspective);
+    perspective-origin: var(--carousel-3d-perspective-origin);
+    width: var(--_diameter);
+    height: var(--_diameter);
+    position: relative;
+    top: 8%;
+    
+
+}
+
+@media only screen and (max-width: 48rem) {
+    .carousel {
+            --_diameter: calc(var(--carousel-diameter) * 0.75);
+            --_item-width: calc(var(--carousel-item-width) * 0.75);
+            --_item-height: calc(var(--carousel-item-height) * 0.75);
+    }
+}
+
+@media only screen and (max-width: 32rem) {
+    .carousel {
+            --_diameter: calc(var(--carousel-diameter) * 0.6);
+            --_item-width: calc(var(--carousel-item-width) * 0.6);
+            --_item-height: calc(var(--carousel-item-height) * 0.6);
+    }
+}
+
+@media only screen and (max-width: 16rem) {
+    .carousel {
+            --_diameter: calc(var(--carousel-diameter) * 0.25);
+            --_item-width: calc(var(--carousel-item-width) * 0.25);
+            --_item-height: calc(var(--carousel-item-height) * 0.25);
+    }
+}
+
+.carousel .carousel-control-button {
+    --_width: var(--carousel-control-button-width);
+    --_height: var(--carousel-control-button-height);
+    z-index: 1;
+    width: var(--_width);
+    height: var(--_height);
+    background-color: rgb(var(--carousel-control-color-rgb));
+    opacity: 0.2;
+    transition: opacity var(--carousel-transition-duration) var(--carousel-transition-ease);
+    position: absolute;
+}
+.carousel .carousel-control-button:hover {
+    opacity: 0.4;
+}
+.carousel .carousel-control-button:has(input:checked) {
+    opacity: 0.8;
+}
+
+.carousel .carousel-control-button input {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.carousel .carousel-control-button.left {
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+    top: calc(var(--_radius) - var(--_height) / 2);
+    left: 0;
+}
+.carousel:has(.carousel-control-button.left input:checked) {
+    --carousel-direction-animation-play-state: running;
+}
+
+.carousel .carousel-control-button.right {
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    top: calc(var(--_radius) - var(--_height) / 2);
+    right: 0;
+}
+.carousel:has(.carousel-control-button.right input:checked) {
+    --carousel-direction-animation-play-state: paused;
+}
+
+.carousel .carousel-rotation-direction {
+    --_direction-animation-play-state: var(--carousel-direction-animation-play-state);
+    --_z: calc(var(--_radius) * -1);
+    transform: translateZ(var(--_z));
+    transform-style: preserve-3d;
+    animation: carousel-rotation-reverse calc(var(--carousel-animation-duration) / 2) reverse linear infinite var(--_direction-animation-play-state);
+    transition: all var(--carousel-transition-duration) var(--carousel-transition-ease);
+}
+
+@keyframes carousel-rotation-reverse {
+    from {transform: translateZ(var(--_z)) rotateY(0deg);}
+    to {transform: translateZ(var(--_z)) rotateY(360deg);}
+}
+
+@keyframes carousel-rotation-normal {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
+}
+
+.carousel .carousel-item-wrapper {
+    transform-style: inherit;
+    width: inherit;
+    height: inherit;
+    list-style-type: none;
+    position: relative;
+    animation: carousel-rotation-normal var(--carousel-animation-duration) normal linear infinite var(--carousel-animation-play-state);
+    transition: all var(--carousel-transition-duration) var(--carousel-transition-ease);
+}
+
+.carousel .carousel-rotation-direction:has(.carousel-item:hover) {
+    --carousel-animation-play-state: paused;
+    --_direction-animation-play-state: paused;
+}
+
+.carousel .carousel-item {
+    --_width: var(--_item-width);
+    --_height: var(--_item-height);
+    --_rotation: calc(360 / var(--_num-elements) * var(--_index) * 1deg);
+    left: calc(var(--_radius) - var(--_item-width) / 2);
+    top: calc(var(--_radius) - var(--_item-height) / 2);
+    transform: rotateY(var(--_rotation)) translateZ(var(--_radius));
+    transform-style: inherit;
+    width: var(--_width);
+    height: var(--_height);
+    transition: all var(--carousel-transition-duration) var(--carousel-transition-ease);
+    box-shadow: 0 0 var(--carousel-item-glow-size) transparent;
+    position: absolute;
+}
+
+.carousel .carousel-item:hover {
+    box-shadow: 0 0 var(--carousel-item-glow-size) rgb(var(--carousel-item-glow-color-rgb));
+    transform: rotateY(var(--_rotation)) translateZ(calc(var(--_radius) * var(--carousel-item-hover-effect)));
+}
+
+.carousel .carousel-item a {
+    display: block;
+    width: inherit;
+    height: inherit;
+    text-indent: -9999px;
+    background-color: rgba(var(--carousel-item-empty-color-rgb), 0.5);
+    background-image: var(--_image-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: filter var(--carousel-transition-duration) var(--carousel-transition-ease);
+    
+}
+
+
+
+.carousel .carousel-item::before {
+    content: '';
+    width: inherit;
+    height: inherit;
+    background-color: rgba(var(--carousel-item-empty-color-rgb), 0.5);
+    background-image: 
+            linear-gradient(to top, rgba(var(--carousel-bg-color-rgb), 0.25) 0%, rgba(var(--carousel-bg-color-rgb), 1.0) 75%), 
+            var(--_image-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    pointer-events: none;
+    filter: blur(var(--carousel-item-reflection-blur)) grayscale(100%);
+    transition: filter var(--carousel-transition-duration) var(--carousel-transition-ease);
+    transform-style: inherit;
+    transform-origin: center bottom;
+    transform: rotateX(90deg) rotateZ(180deg) rotateY(180deg);
+    position: absolute;
+}
+
+.carousel .carousel-item:hover::before {
+    filter: blur(var(--carousel-item-reflection-blur)) grayscale(0%);
+}
+
+.carousel .carousel-ground {
+    --_width: var(--_diameter);
+    --_height: var(--_diameter);
+    --_rotation: 90deg;
+    left: calc(var(--_radius) - var(--_width) / 2);
+    top: calc(var(--_radius) - var(--_height) / 2);
+    transform: rotateX(var(--_rotation)) translateZ(calc(var(--_item-height) / -2));
+    width: var(--_width);
+    height: var(--_height);
+    border-radius: 50%;
+    background: radial-gradient(rgba(var(--carousel-shadow-color-rgb), 0.75) 15% , rgba(var(--carousel-bg-color-rgb), 0) 60%);
+    opacity: 0.5;
+    transition: opacity var(--carousel-transition-duration) var(--carousel-transition-ease);
+    position: absolute;
+}
+
+.carousel .carousel-item-wrapper:has(.carousel-item:hover) .carousel-ground {
+    opacity: 0.75;
+}
+.finl{
+    height: 100vh;
+    width: 100vw;
+    background-color: hsl(240, 5%, 92%);
+}
+.typewriter {
+    font-size: 4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black;
+    display: inline-block;
+    color:rgb(21, 20, 20);
+    height: 200px;
+    width: 200px;
+  }
+  
+/* Tooltip styling */
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Stars and background styling */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Prevent interaction */
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1s infinite alternate;
+    opacity: 0.7;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem; /* Adjust heading size */
+    }
+    .event-content {
+        width: 90%; /* Adjust event box width for smaller screens */
+    }
+}

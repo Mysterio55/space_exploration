@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #f0f0f0;
+}
+
+.starry-night {
+    background-image: url("bg.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: background-move 30s linear infinite;
+}
+
+@keyframes background-move {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.grid {
+    position: relative;
+    width: 60vw; 
+    height: 60vw; 
+    max-width: 500px; 
+    max-height: 500px;
+}
+
+.star {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    max-width: 15px; 
+    max-height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 20px white;
+}
+
+/* Positioning stars in Cassiopeia constellation */
+#schedar { top: 25%; left: 40%; }
+#caph { top: 40%; left: 25%; }
+#tsih { top: 35%; left: 50%; }
+#ruchbah { top: 50%; left: 60%; }
+#segin { top: 65%; left: 75%; }
+
+/* Positioning labels next to their stars */
+.label {
+    position: absolute;
+    color: white;
+    font-size: 0.7vw;
+    font-family: Arial, sans-serif;
+}
+
+#schedar-label { top: 23%; left: 43%; }
+#caph-label { top: 38%; left: 28%; }
+#tsih-label { top: 33%; left: 53%; }
+#ruchbah-label { top: 48%; left: 63%; }
+#segin-label { top: 63%; left: 78%; }
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.6vw;
+    pointer-events: none;
+    display: none;
+}
+
+/* Astronomy Section Styles */
+.astronomy-section {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transform: scale(0);
+    animation: slide-in 0.8s forwards;
+}
+
+.astronomy-section h2 {
+    font-size: 1.2rem;
+    color: #ffd700;
+}
+
+/* Information Section */
+.information-section {
+    position: absolute;
+    top: 69%;
+    left: 20%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    transform: scale(0);
+    animation: slide-in 0.8s forwards;
+    animation-delay: 0.5s;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.information-section h2 {
+    font-size: 1.2rem;
+    color: #ffd700;
+}
+
+/* Education Area Styles */
+.education-area {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    transform: scale(0);
+    animation: slide-in 0.8s forwards;
+    animation-delay: 1s;
+    color: #ffd700;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.education-area h2 {
+    font-size: 1.2rem;
+}
+
+.education-area ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.education-area a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.education-area a:hover {
+    color: #ffd700;
+}
+
+/* Animation for section entry */
+@keyframes slide-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}

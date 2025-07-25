@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #f0f0f0;
+}
+
+.starry-night {
+    background-image: url("bg.jpg"); /* Keep the background image */
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: background-move 30s linear infinite;
+}
+
+@keyframes background-move {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.grid {
+    position: relative;
+    width: 60vw;
+    height: 60vw;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.star {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    max-width: 15px;
+    max-height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 20px white;
+}
+
+#regulus { top: 10%; left: 40%; }
+#denebola { top: 75%; left: 60%; }
+#algieba { top: 50%; left: 30%; }
+#zosma { top: 40%; left: 55%; }
+#algenubi { top: 65%; left: 25%; }
+#chertan { top: 55%; left: 75%; }
+
+.label {
+    position: absolute;
+    color: white;
+    font-size: 0.7vw;
+    max-font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+#regulus-label { top: 8%; left: 42%; }
+#denebola-label { top: 78%; left: 62%; }
+#algieba-label { top: 52%; left: 32%; }
+#zosma-label { top: 42%; left: 57%; }
+#algenubi-label { top: 67%; left: 27%; }
+#chertan-label { top: 57%; left: 77%; }
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.6vw;
+    pointer-events: none;
+    display: none;
+}
+
+.astronomy-section, .information-section, .education-area {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    transform: scale(0);
+    animation: slide-in 0.8s forwards;
+}
+
+.astronomy-section {
+    top: 10%;
+    left: 5%;
+}
+
+.information-section {
+    top: 69%;
+    left: 20%;
+}
+
+.education-area {
+    top: 30%;
+    right: 5%;
+}
+
+.astronomy-section h2, .information-section h2, .education-area h2 {
+    font-size: 1.2rem;
+    color: #ffd700;
+}
+
+.education-area ul {
+    list-style-type: none;
+}
+
+.education-area a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.education-area a:hover {
+    color: #ffd700;
+}
+
+@keyframes slide-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+.starry-night {
+    background: radial-gradient(circle, rgba(0,0,50,1) 0%, rgba(0,0,20,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+/* Glowing stars (Orion constellation points) */
+.star {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: glow 2s infinite alternate;
+}
+
+/* Star positions in the Orion constellation */
+#betelgeuse {
+    top: 20px;
+    left: 50px;
+}
+
+#bellatrix {
+    top: 60px;
+    left: 250px;
+}
+
+#alnilam {
+    top: 150px;
+    left: 140px;
+}
+
+#mintaka {
+    top: 120px;
+    left: 60px;
+}
+
+#alnitak {
+    top: 180px;
+    left: 220px;
+}
+
+#saiph {
+    top: 300px;
+    left: 70px;
+}
+
+#rigel {
+    top: 280px;
+    left: 280px;
+}
+
+/* Star glow animation */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px white;
+    }
+    to {
+        box-shadow: 0 0 20px white;
+    }
+}
